@@ -42,13 +42,18 @@ export default function Nav()
                     {!matches &&(
 
 
-                    <div onClick={()=>setToggled(prevToggle=>!prevToggle)} className="space-y-1 coursor-pointer z-50">
+                    <div onClick={()=>setToggled(prevToggle=>!prevToggle)} className="space-y-1.5 coursor-pointer z-50">
                         <motion.span
+                            animate={{rotateZ:toggled? 45:0 ,y:toggled?8:0}}
                          className="block h-0.5 w-8 bg-black"></motion.span>
                         <motion.span
+                         animate={{width:toggled?0:24}}
                          className="block h-0.5 w-6 bg-black"></motion.span>
                         <motion.span
-                         className="block h-0.5 w-4 bg-black"></motion.span>
+                        animate={{rotateZ:toggled?-45:0,
+                            y:toggled?-8:0,
+                        width:toggled?32:16,}}
+                         className="block h-0.5 w-6 bg-black"></motion.span>
                     </div>
                     )}
                     {toggled && !matches && (
