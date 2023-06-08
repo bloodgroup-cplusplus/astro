@@ -29,13 +29,33 @@ export default function Nav()
                     <a href="/">Hill Queen</a>
                     </h1>
                     
+
+
+                    {matches &&(
+                    <div className="flex gap-12">
+                        <a href="/">Home</a>
+                        <a href="/tours">Tours</a>
+                        <a href="/contact">Contact</a>
+                    </div>
+                    )}
+                    
                     {!matches &&(
 
 
-                    <div onClick={()=>setToggled(prevToggle=>!prevToggle)} className="space-y-1 coursor-pointer">
+                    <div onClick={()=>setToggled(prevToggle=>!prevToggle)} className="space-y-1 coursor-pointer z-50">
                         <span className="block h-0.5 w-8 bg-black"></span>
                         <span className="block h-0.5 w-6 bg-black"></span>
                         <span className="block h-0.5 w-4 bg-black"></span>
+                    </div>
+                    )}
+                    {toggled && !matches && (
+
+                    <div className="fixed flex bg-white bottom-0 left-0 w-full h-screen items-center justify-center">
+                        <div className="flex flex-col gap-24 text-lg ">
+                        <a href="/">Home</a>
+                        <a href="/tours">Tours</a>
+                        <a href="/contact">Contact</a>
+                        </div>
                     </div>
                     )}
         </nav>
