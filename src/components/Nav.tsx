@@ -1,15 +1,18 @@
 import logo from "../../public/hill_queen-1.png"
 import {motion} from "framer-motion"
 import { useState } from "react"
+import useMediaQuery from "../util/useMediaQuery"
 export default function Nav()
 {
     const[toggled,setToggled] = useState(false)
+    const matches=useMediaQuery('(min-width:128px)')
+    console.log(matches)
     return (
-        <nav className="relative mx-8 mb-24 flex justify-between items-center pt-12  pb-6 font-medium md:mx-16 lg:mx-32 ">
+        <nav className="relative mx-12 mb-12 flex justify-between items-center pt-8  pb-0 font-medium md:mx-21 lg:mx-32 ">
             <svg 
-                className="absolute bottom-0 left-1/2 -translate-x-1/2"
+                className="absolute bottom-0 left-1/2 -translate-x-1/3"
                 width="250" 
-                height={4} 
+                height={6} 
                 viewBox="0 0 250 4" 
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
